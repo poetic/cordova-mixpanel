@@ -22,6 +22,9 @@
     <header-file src="src/ios/CDVMixpanel.h" />
     <source-file src="src/ios/CDVMixpanel.m" />
 
+    <header-file src="src/ios/AppDelegate+notification.h" />
+    <source-file src="src/ios/AppDelegate+notification.m" />
+
     <source-file src="src/ios/Mixpanel/MPSurvey.storyboard" />
     <source-file src="src/ios/Mixpanel/MPNotification.storyboard" />
 

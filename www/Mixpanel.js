@@ -62,4 +62,19 @@ Mixpanel.showSurveyWithID = function(id, s, f){
   return exec(s, f, "Mixpanel", "showSurveyWithID", [id]);
 };
 
+// Call this to register for push notifications. Content of [options] depends on whether we are working with APNS (iOS) or GCM (Android)
+Mixpanel.register = function(s, f, options) {
+  exec(s, f, "Mixpanel", "register", [options]);
+};
+
+// Call this to unregister for push notifications
+Mixpanel.unregister = function(s, f, options) {
+  exec(s, f, "Mixpanel", "unregister", [options]);
+};
+
+// Call this to set the application icon badge
+Mixpanel.setApplicationIconBadgeNumber = function(s, f, badge) {
+  exec(s, f, "Mixpanel", "setApplicationIconBadgeNumber", [{badge: badge}]);
+};
+
 module.exports = Mixpanel;

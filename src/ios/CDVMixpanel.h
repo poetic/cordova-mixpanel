@@ -3,10 +3,34 @@
 //
 //  Copyright (c) 2014 Poetic Systems. All rights reserved.
 
+#import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
 #import "Mixpanel.h"
 
 @interface CDVMixpanel: CDVPlugin
+{
+    NSDictionary *notificationMessage;
+    BOOL    isInline;
+    NSString *notificationCallbackId;
+    NSString *callback;
+    
+    BOOL ready;
+}
+
+@property (nonatomic, copy) NSString *callbackId;
+@property (nonatomic, copy) NSString *notificationCallbackId;
+@property (nonatomic, copy) NSString *callback;
+
+@property (nonatomic, strong) NSDictionary *notificationMessage;
+@property BOOL                          isInline;
+
+- (void)register:(CDVInvokedUrlCommand*)command;
+
+- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
+- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+
+- (void)setNotificationMessage:(NSDictionary *)notification;
+- (void)notificationReceived;
 
 -(void)init:(CDVInvokedUrlCommand *)command;
 -(void)track:(CDVInvokedUrlCommand *)command;
