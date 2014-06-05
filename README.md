@@ -1,5 +1,7 @@
 # cordova-mixpanel
 
+*ios only right now. Would happily accept an Android support PR*
+
 Cordova Mixpanel plugin repository. It works with cordova-3.4.0.
 
 ## Installation
