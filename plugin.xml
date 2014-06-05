@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="org.poetic.mixpanel" version="0.1.0">
+  <name>Mixpanel</name>
+  <description>Mixpanel SDK Cordova</description>
+  <license>Apache 2.0</license>
+  <keywords>poetic,mixpanel,analytics</keywords>
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <js-module src="www/Mixpanel.js" name="Mixpanel">
+    <clobbers target="Mixpanel" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Mixpanel">
+        <param name="ios-package" value="CDVMixpanel"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CDVMixpanel.h" />
+    <source-file src="src/ios/CDVMixpanel.m" />
+
+    <header-file src="src/ios/Mixpanel/MPNotification.h" />
+    <header-file src="src/ios/Mixpanel/MPNotificationViewController.h" />
+    <header-file src="src/ios/Mixpanel/MPSurvey.h" />
+    <header-file src="src/ios/Mixpanel/MPSurveyNavigationController.h" />
+    <header-file src="src/ios/Mixpanel/MPSurveyQuestion.h" />
+    <header-file src="src/ios/Mixpanel/MPSurveyQuestionViewController.h" />
+    <header-file src="src/ios/Mixpanel/Mixpanel.h" />
+    <header-file src="src/ios/Mixpanel/NSData+MPBase64.h" />
+    <header-file src="src/ios/Mixpanel/UIColor+MPColor.h" />
+    <header-file src="src/ios/Mixpanel/UIImage+MPAverageColor.h" />
+    <header-file src="src/ios/Mixpanel/UIImage+MPImageEffects.h" />
+    <header-file src="src/ios/Mixpanel/UIView+MPSnapshotImage.h" />
+
+    <source-file src="src/ios/Mixpanel/MPNotification.m" />
+    <source-file src="src/ios/Mixpanel/MPNotificationViewController.m" />
+    <source-file src="src/ios/Mixpanel/MPSurvey.m" />
+    <source-file src="src/ios/Mixpanel/MPSurveyNavigationController.m" />
+    <source-file src="src/ios/Mixpanel/MPSurveyQuestion.m" />
+    <source-file src="src/ios/Mixpanel/MPSurveyQuestionViewController.m" />
+    <source-file src="src/ios/Mixpanel/Mixpanel.m" />
+    <source-file src="src/ios/Mixpanel/NSData+MPBase64.m" />
+    <source-file src="src/ios/Mixpanel/UIColor+MPColor.m" />
+    <source-file src="src/ios/Mixpanel/UIImage+MPAverageColor.m" />
+    <source-file src="src/ios/Mixpanel/UIImage+MPImageEffects.m" />
+    <source-file src="src/ios/Mixpanel/UIView+MPSnapshotImage.m" />
+
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft@2x.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight@2x.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/MPCheckmark.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/MPCheckmark@2x.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtn.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtn@2x.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/MPDismissKeyboard.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/MPDismissKeyboard@2x.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo.png" />
+    <source-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo@2x.png" />
+
+    <framework src="Foundation.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="CoreTelephony.framework" />
+    <framework src="Accelerate.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="QuartzCore.framework" />
+
+  </platform> 
+</plugin>
