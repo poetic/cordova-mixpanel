@@ -1,8 +1,12 @@
 # cordova-mixpanel
 
-*ios only right now. Would happily accept an Android support PR*
+*iOS only right now. We would happily accept an Android support pull request*
 
-Cordova Mixpanel plugin repository. It works with cordova-3.4.0.
+Cordova plugin that integrates the Native Mixpanel SDK in your cordova
+application. Use it to track events, people, or revenue. You can also display
+in-app notifications or surveys.
+
+It works with cordova-3.4.0+
 
 ## Installation
 
