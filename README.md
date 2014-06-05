@@ -44,8 +44,10 @@ Mixpanel.showSurvey(s, f)
 Mixpanel.showSurveyWithID (id, s, f)
 
 // Push Notifications
-// Options: { badge: true, alert: true, sound: false, ecb: "globalFuncName" }
+// Options: { badge: true, alert: true, sound: false}
 Mixpanel.register(options, s, f)
 Mixpanel.unregister(options, s, f)
 Mixpanel.setApplicationIconBadgeNumber(badgeNumber, s, f)
+
+document.addEventListener('mixpanel.push', function(event){})
 ```
