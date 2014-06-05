@@ -42,4 +42,10 @@ Mixpanel.showNotificationWithID(id, s, f)
 Mixpanel.setShowSurveyOnActive(bool, s, f)
 Mixpanel.showSurvey(s, f)
 Mixpanel.showSurveyWithID (id, s, f)
+
+// Push Notifications
+// Options: { badge: true, alert: true, sound: false, ecb: "globalFuncName" }
+Mixpanel.register(options, s, f)
+Mixpanel.unregister(options, s, f)
+Mixpanel.setApplicationIconBadgeNumber(badgeNumber, s, f)
 ```

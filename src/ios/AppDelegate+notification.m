@@ -53,18 +53,16 @@ static char launchNotificationKey;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    CDVMixpanel *pushHandler = [self getCommandInstance:@"CDVMixpanel"];
+    CDVMixpanel *pushHandler = [self getCommandInstance:@"Mixpanel"];
     [pushHandler didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    CDVMixpanel *pushHandler = [self getCommandInstance:@"CDVMixpanel"];
+    CDVMixpanel *pushHandler = [self getCommandInstance:@"Mixpanel"];
     [pushHandler didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"didReceiveNotification");
-    
     // Get application state for iOS4.x+ devices, otherwise assume active
     UIApplicationState appState = UIApplicationStateActive;
     if ([application respondsToSelector:@selector(applicationState)]) {
@@ -72,7 +70,7 @@ static char launchNotificationKey;
     }
     
     if (appState == UIApplicationStateActive) {
-        CDVMixpanel *pushHandler = [self getCommandInstance:@"CDVMixpanel"];
+        CDVMixpanel *pushHandler = [self getCommandInstance:@"Mixpanel"];
         pushHandler.notificationMessage = userInfo;
         pushHandler.isInline = YES;
         [pushHandler notificationReceived];
@@ -83,14 +81,11 @@ static char launchNotificationKey;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
-    NSLog(@"active");
-    
     //zero badge
     application.applicationIconBadgeNumber = 0;
 
     if (self.launchNotification) {
-        CDVMixpanel *pushHandler = [self getCommandInstance:@"CDVMixpanel"];
+        CDVMixpanel *pushHandler = [self getCommandInstance:@"Mixpanel"];
     
         pushHandler.notificationMessage = self.launchNotification;
         self.launchNotification = nil;
